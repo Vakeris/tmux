@@ -4,10 +4,10 @@ unbind-key C-z
 bind-key C-z send-prefix
  
 # Use Alt-arrow keys to switch panes
-bind -n M-Left select-pane -L
-bind -n M-Right select-pane -R
-bind -n M-Up select-pane -U
-bind -n M-Down select-pane -D
+bind h select-pane -L 
+bind j select-pane -D 
+bind k select-pane -U 
+bind l select-pane -R 
  
 # Shift arrow to switch windows
 bind -n S-Left previous-window
@@ -28,15 +28,18 @@ set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'christoomey/vim-tmux-navigator'
 
-set -g @plugin 'egel/tmux-gruvbox'
-set -g @tmux-gruvbox 'dark' # or 'light'
+#set -g @plugin 'egel/tmux-gruvbox'
+#set -g @tmux-gruvbox 'dark' # or 'light'
 #set -g @plugin 'dracula/tmux' 
 #set -g  @dracula-show-powerline true
 #set -g  @dracula-fixed-location "<cool>"
 #set -g  @dracula-plugins "weather"
 #set -g  @dracula-show-left-icon session
-set -g  status-position bottom
+set -g  status-position top
 
+set -g @plugin 'catppuccin/tmux'
+# ...alongside
+set -g @plugin 'tmux-plugins/tpm'
 
 # Other examples:
 # set -g @plugin 'github_username/plugin_name'
@@ -46,4 +49,3 @@ set -g  status-position bottom
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
-
